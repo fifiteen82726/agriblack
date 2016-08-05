@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  heat: 1.5
+  water: 1.5
+  protein: 1.5
+  fat: 1.5
+  carbohydrate: 1.5
+  fiber: 1.5
+  sugar: 1.5
+  na: 1.5
+  k: 1.5
+  ca: 1.5
+  mg: 1.5
+  fe: 1.5
+  zn: 1.5
+  p: 1.5
+  va: 1.5
+  ve: 1.5
+  vb: 1.5
+  vc: 1.5
+
+two:
+  name: MyString
+  heat: 1.5
+  water: 1.5
+  protein: 1.5
+  fat: 1.5
+  carbohydrate: 1.5
+  fiber: 1.5
+  sugar: 1.5
+  na: 1.5
+  k: 1.5
+  ca: 1.5
+  mg: 1.5
+  fe: 1.5
+  zn: 1.5
+  p: 1.5
+  va: 1.5
+  ve: 1.5
+  vb: 1.5
+  vc: 1.5

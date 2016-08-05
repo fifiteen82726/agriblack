@@ -8,6 +8,12 @@
 
 
 # -*- coding: UTF-8 -*-
+#name	heat	water(g)	protein(g)	fat(g)	carbohydrate(g)	fiber(g)	sugar(g)	na(mg)	k(mg)	ca(mg)	mg(mg)	fe(mg)	zn(mg)	p(mg)	va(I.U.)	ve(mg)	vb(mg)	vc(mg)
+# IU*0.66 = mg
+
+
+#rails g model Fruit name heat:float water:float protein:float fat:float	carbohydrate:float	fiber:float	sugar:float	na:float	k:float	ca:float	mg:float	fe:float	zn:float	p:float	 va:float	ve:float	vb:float vc:float
+Fruit.destroy_all
 
 arr = [
   ["木瓜",36,89.1,0.6,0.1,9.9,1.4,6.2,3,186,23,15,0.3,0.2,11,665,0.3,0.12,58.3],
@@ -55,6 +61,6 @@ arr = [
 ]
 
 
-arr.each do |single|
-	print single[0]
+arr.each do |f|
+	Fruit.create(name: f[0], heat: f[1],water: f[2], protein: f[3], fat: f[4], carbohydrate: f[5], fiber: f[6], sugar: f[7], na: f[8], k: f[9], ca: f[10], mg: f[11], fe: f[12], zn: f[13], p: f[14], va: f[15], ve: f[16], vb:f[17], vc:f[18])
 end
