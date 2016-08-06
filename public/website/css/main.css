@@ -2,6 +2,10 @@
    text-align: center;   
 }
 
+#changefont{
+   font-family: 微軟正黑體;
+}
+
 #SectionSearch{
 	padding-bottom: 20px
 }
