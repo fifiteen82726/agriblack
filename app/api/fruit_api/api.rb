@@ -25,8 +25,15 @@ module FruitAPI
       get :haha do
         Fruit.find_by_name(params[:name])
       end
-      # end
+
+      desc 'Return a fruit.'
+      get :all_fruit do
+        Fruit.all
+      end
+
     end
+
+    
 
 
     add_swagger_documentation(
