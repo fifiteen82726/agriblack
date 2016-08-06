@@ -29,6 +29,10 @@ gem 'grape-swagger'
 gem 'grape-entity'
 gem 'rails_12factor', group: :production
 gem 'rack-cors'
+gem 'will_paginate'
+gem 'devise'
+gem 'faker', '~> 1.6.6'
+gem "paperclip", '~> 5.0.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

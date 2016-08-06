@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'pie' => 'pie#index'
 
   resources :posts
