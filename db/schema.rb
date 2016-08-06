@@ -13,34 +13,37 @@
 
 ActiveRecord::Schema.define(version: 20160805165446) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "fruits", force: :cascade do |t|
-    t.string   "name",         limit: 255
-    t.float    "heat",         limit: 24
-    t.float    "water",        limit: 24
-    t.float    "protein",      limit: 24
-    t.float    "fat",          limit: 24
-    t.float    "carbohydrate", limit: 24
-    t.float    "fiber",        limit: 24
-    t.float    "sugar",        limit: 24
-    t.float    "na",           limit: 24
-    t.float    "k",            limit: 24
-    t.float    "ca",           limit: 24
-    t.float    "mg",           limit: 24
-    t.float    "fe",           limit: 24
-    t.float    "zn",           limit: 24
-    t.float    "p",            limit: 24
-    t.float    "va",           limit: 24
-    t.float    "ve",           limit: 24
-    t.float    "vb",           limit: 24
-    t.float    "vc",           limit: 24
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name"
+    t.float    "heat"
+    t.float    "water"
+    t.float    "protein"
+    t.float    "fat"
+    t.float    "carbohydrate"
+    t.float    "fiber"
+    t.float    "sugar"
+    t.float    "na"
+    t.float    "k"
+    t.float    "ca"
+    t.float    "mg"
+    t.float    "fe"
+    t.float    "zn"
+    t.float    "p"
+    t.float    "va"
+    t.float    "ve"
+    t.float    "vb"
+    t.float    "vc"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "posts", force: :cascade do |t|
-    t.text     "content",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
