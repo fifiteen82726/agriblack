@@ -28,6 +28,7 @@ gem 'hashie-forbidden_attributes'
 gem 'grape-swagger'
 gem 'grape-entity'
 gem 'rails_12factor', group: :production
+gem 'rack-cors'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
