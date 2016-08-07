@@ -16,17 +16,23 @@
     <%= f.file_field :photo %>
   </div>
 
- 
-
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
 
-<div id="project-label">Enter Fruit Tag:</div>
-  <input id="project">
-<div id = "fruit_tag"> </div>
- 
+  <div class="field">
+  
+  Fruit : <input type="text" id="fruit">
+  <button id="add_fruit">Add Fruit</button><br/>
+  <div id="fruit_tags">
+  </div>
+  </div>
+
+
+  <!-- <div id="project-label">Enter Fruit Tag:</div>
+    <input id="project">
+  <div id = "fruit_tag"> </div> -->
 
   <div class="actions">
     <%= f.submit %>
@@ -55,24 +61,52 @@
      var availableTags = ["papaya", "Green Papaya", "coconut", "Granadilla", "watermelon"];
 
     
-    $( "#project" ).autocomplete({
-      minLength: 0,
-      source: availableTags,
-      focus: function( event, ui ) {
-        $( "#project" ).val(ui.item.label);
-        return false;
-      },
-      select: function( event, ui ) {
-        $( "#project" ).val( ui.item.label );
-        $("#fruit_tag").append("<div>#"+ ui.item.label +"</div>");
-        return false;
-      }
-    })
-    .autocomplete( "instance" )._renderItem = function( ul, item ) {
-      return $( "<li>" )
-        .append( "<button class = \"btn btn-default\">" + item.label  + "</button>" )
-        .appendTo( ul );
-    };
-  } );
+  //   $( "#project" ).autocomplete({
+  //     minLength: 0,
+  //     source: availableTags,
+  //     focus: function( event, ui ) {
+  //       $( "#project" ).val(ui.item.label);
+  //       return false;
+  //     },
+  //     select: function( event, ui ) {
+  //       $( "#project" ).val( ui.item.label );
+  //       $("#fruit_tag").append("<div>#"+ ui.item.label +"</div>");
+  //       return false;
+  //     }
+  //   })
+  //   .autocomplete( "instance" )._renderItem = function( ul, item ) {
+  //     return $( "<li>" )
+  //       .append( "<button class = \"btn btn-default\">" + item.label  + "</button>" )
+  //       .appendTo( ul );
+  //   };
+  // } );
+
+
+
+$(document).on('click','#add_fruit',function(e){
+  e.preventDefault();
+  addFruitTag();
+});
+
+function addFruitTag(){
+  var content = $('#content').val().trim();
+  var fruit = $('#fruit').val().trim();
+  if(content.length <1 || fruit.length < 1){
+    alert("Please fill content and fruit");
+  }else{
+      $('#fruit_tags').append(
+        $('<input>')
+        .attr('type','checkbox')
+        .attr('name','fruits[]')
+        .attr('value',$('#fruit').val())
+        .prop('checked','true')
+      )
+      .append(
+        $('<label>')
+        .text($('#fruit').val())    
+      )
+      .append($('<br>'));
+  }
+}
   </script>
 
