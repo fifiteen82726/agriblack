@@ -1,7 +1,9 @@
 .tabletitle thead tr th{
    text-align: center;   
 }
-
+hr{
+    border-top: 5px solid rgba(138, 109, 59, 0.25);
+}
 #changefont{
    font-family: 微軟正黑體;
 }

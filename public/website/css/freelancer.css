@@ -62,7 +62,7 @@ hr.star-primary {
   border-color: #2C3E50;
 }
 hr.star-primary:after {
-  background-color: white;
+  background: white;
   color: #2C3E50;
 }
 .img-centered {
@@ -70,7 +70,7 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #FFFF00;
+  background: #FFD700;
   color: #2c3e50;
 }
 header .container {
