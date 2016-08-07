@@ -1,16 +1,18 @@
-<%= form_for(@post,  html: { multipart: true })  do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
+  <%= form_for(@post,  html: { multipart: true })  do |f| %>
+  <% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
       <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
   
+
   <div class="field">
     <%= f.label :photo %><br>
     <%= f.file_field :photo %>
@@ -20,93 +22,56 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
-
-  <div class="field">
-  
-  Fruit : <input type="text" id="fruit">
-  <button id="add_fruit">Add Fruit</button><br/>
-  <div id="fruit_tags">
-  </div>
-  </div>
-
-
-  <!-- <div id="project-label">Enter Fruit Tag:</div>
-    <input id="project">
-  <div id = "fruit_tag"> </div> -->
+  <div id="project-label">Enter Fruit Tag:</div>
+  <input id="project">
+  <div id = "fruit_tag"> </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
 
 
 
 
-  
-  
-  
-  <script>
+
+
+
+<script>
   // $( function() {
-  
+
   //    var availableTags = ["木瓜", "青木瓜", "椰子汁", "百香果", "西瓜", "李子", "芒果", "金黃奇異果", "奇異果", "枇杷", "甜柿", "萊姆", "檸檬汁", "文旦", "柳橙", "椪柑", "火龍果", "香蕉", "桑葚", "桑葚汁", "水蜜桃", "荔枝", "草莓", "西洋梨", "水梨", "甜瓜,香瓜", "蜜棗", "芭樂", "大番茄", "小番茄", "楊桃", "葡萄", "酪梨", "鳳梨", "蓮霧", "龍眼", "蘋果", "釋迦", "番石榴", "紅毛丹", "榴槤", "櫻桃"];
   //   $( "#tags" ).autocomplete({
   //     source: availableTags
   //   });
   // } );
 
-   $( function() {
+  $( function() {
 
     // var availableTags = ["木瓜", "青木瓜", "椰子汁", "百香果", "西瓜", "李子", "芒果", "金黃奇異果", "奇異果", "枇杷", "甜柿", "萊姆", "檸檬汁", "文旦", "柳橙", "椪柑", "火龍果", "香蕉", "桑葚", "桑葚汁", "水蜜桃", "荔枝", "草莓", "西洋梨", "水梨", "甜瓜,香瓜", "蜜棗", "芭樂", "大番茄", "小番茄", "楊桃", "葡萄", "酪梨", "鳳梨", "蓮霧", "龍眼", "蘋果", "釋迦", "番石榴", "紅毛丹", "榴槤", "櫻桃"];
 
-     var availableTags = ["papaya", "Green Papaya", "coconut", "Granadilla", "watermelon"];
+    var availableTags = ["papaya", "Green Papaya", "coconut", "Granadilla", "watermelon"];
 
     
-  //   $( "#project" ).autocomplete({
-  //     minLength: 0,
-  //     source: availableTags,
-  //     focus: function( event, ui ) {
-  //       $( "#project" ).val(ui.item.label);
-  //       return false;
-  //     },
-  //     select: function( event, ui ) {
-  //       $( "#project" ).val( ui.item.label );
-  //       $("#fruit_tag").append("<div>#"+ ui.item.label +"</div>");
-  //       return false;
-  //     }
-  //   })
-  //   .autocomplete( "instance" )._renderItem = function( ul, item ) {
-  //     return $( "<li>" )
-  //       .append( "<button class = \"btn btn-default\">" + item.label  + "</button>" )
-  //       .appendTo( ul );
-  //   };
-  // } );
-
-
-
-$(document).on('click','#add_fruit',function(e){
-  e.preventDefault();
-  addFruitTag();
-});
-
-function addFruitTag(){
-  var content = $('#content').val().trim();
-  var fruit = $('#fruit').val().trim();
-  if(content.length <1 || fruit.length < 1){
-    alert("Please fill content and fruit");
-  }else{
-      $('#fruit_tags').append(
-        $('<input>')
-        .attr('type','checkbox')
-        .attr('name','fruits[]')
-        .attr('value',$('#fruit').val())
-        .prop('checked','true')
-      )
-      .append(
-        $('<label>')
-        .text($('#fruit').val())    
-      )
-      .append($('<br>'));
-  }
-}
-  </script>
+    $( "#project" ).autocomplete({
+      minLength: 0,
+      source: availableTags,
+      focus: function( event, ui ) {
+        $( "#project" ).val(ui.item.label);
+        return false;
+      },
+      select: function( event, ui ) {
+        $( "#project" ).val( ui.item.label );
+        $("#fruit_tag").append("<div>#"+ ui.item.label +"</div>");
+        $("#project").val("");
+        return false;
+      }
+    })
+    .autocomplete( "instance" )._renderItem = function( ul, item ) {
+      return $( "<li>" )
+      .append( "<button class = \"btn btn-default\">" + item.label  + "</button>" )
+      .appendTo( ul );
+    };
+  } );
+</script>
 
