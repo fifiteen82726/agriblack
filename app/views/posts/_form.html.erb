@@ -16,22 +16,65 @@
     <%= f.file_field :photo %>
   </div>
 
-  <button class ="btn btn-primary"></button>
-
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-      <input type="text" id="fruit_input" class="form-control" placeholder="Search for...">
-    </div>
-  </div>
+ 
 
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
+
+<div id="project-label">Enter Fruit Tag:</div>
+  
+  <input id="project">
+  <input type="hidden" id="project-id">
+<div id = "fruit_tag"> </div>
+ 
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+
+
+  
+  
+  
+  <script>
+  // $( function() {
+  
+  //    var availableTags = ["木瓜", "青木瓜", "椰子汁", "百香果", "西瓜", "李子", "芒果", "金黃奇異果", "奇異果", "枇杷", "甜柿", "萊姆", "檸檬汁", "文旦", "柳橙", "椪柑", "火龍果", "香蕉", "桑葚", "桑葚汁", "水蜜桃", "荔枝", "草莓", "西洋梨", "水梨", "甜瓜,香瓜", "蜜棗", "芭樂", "大番茄", "小番茄", "楊桃", "葡萄", "酪梨", "鳳梨", "蓮霧", "龍眼", "蘋果", "釋迦", "番石榴", "紅毛丹", "榴槤", "櫻桃"];
+  //   $( "#tags" ).autocomplete({
+  //     source: availableTags
+  //   });
+  // } );
+
+   $( function() {
+
+    var availableTags = ["木瓜", "青木瓜", "椰子汁", "百香果", "西瓜", "李子", "芒果", "金黃奇異果", "奇異果", "枇杷", "甜柿", "萊姆", "檸檬汁", "文旦", "柳橙", "椪柑", "火龍果", "香蕉", "桑葚", "桑葚汁", "水蜜桃", "荔枝", "草莓", "西洋梨", "水梨", "甜瓜,香瓜", "蜜棗", "芭樂", "大番茄", "小番茄", "楊桃", "葡萄", "酪梨", "鳳梨", "蓮霧", "龍眼", "蘋果", "釋迦", "番石榴", "紅毛丹", "榴槤", "櫻桃"];
+
+    
+    $( "#project" ).autocomplete({
+      minLength: 0,
+      source: availableTags,
+      focus: function( event, ui ) {
+        $( "#project" ).val(ui.item.label);
+        return false;
+      },
+      select: function( event, ui ) {
+        $( "#project" ).val( ui.item.label );
+        $( "#project-id" ).val( ui.item.value );
+        // $( "#project-description" ).html( ui.item.value );
+        $("#fruit_tag").append("<div>"+ ui.item.label +"</div>");
+        return false;
+      }
+    })
+    .autocomplete( "instance" )._renderItem = function( ul, item ) {
+      return $( "<li>" )
+        .append( "<button class = \"btn btn-default\">" + item.label  + "</button>" )
+        .appendTo( ul );
+    };
+  } );
+  </script>
+
