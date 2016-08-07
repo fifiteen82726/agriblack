@@ -33,6 +33,7 @@ gem 'will_paginate'
 gem 'devise'
 gem 'faker', '~> 1.6.6'
 gem "paperclip", '~> 5.0.0'
+gem 'pry-rails'
 
 gem 'omniauth'
 gem 'omniauth-facebook'

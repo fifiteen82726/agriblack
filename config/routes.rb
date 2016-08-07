@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  get 'session/create'
+
+  get 'session/destroy'
+
   devise_for :users
+
+  get 'auth/:provider/callback' => 'session#create'
   get 'pie' => 'pie#index'
 
   resources :posts
