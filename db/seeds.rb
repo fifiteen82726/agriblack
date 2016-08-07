@@ -15,6 +15,16 @@
 #rails g model Fruit name heat:float water:float protein:float fat:float	carbohydrate:float	fiber:float	sugar:float	na:float	k:float	ca:float	mg:float	fe:float	zn:float	p:float	 va:float	ve:float	vb:float vc:float
 Fruit.destroy_all
 
+
+User.destroy_all
+Post.destroy_all
+
+
+p1 = Post.create(content: Faker::Lorem.paragraph)
+p2 = Post.create(content: Faker::Lorem.paragraph)
+
+User.create(email: "fifiteen82726@gmail.com", password: "12345678", posts:[p1,p2])
+
 arr = [
   ["木瓜",36,89.1,0.6,0.1,9.9,1.4,6.2,3,186,23,15,0.3,0.2,11,665,0.3,0.12,58.3],
   ["青木瓜",25,91.7,0.6,0.1,7.2,2.4,4.3,5,139,31,19,0.2,0.1,13,8,0.39,25.3,25.3],
@@ -64,3 +74,6 @@ arr = [
 arr.each do |f|
 	Fruit.create(name: f[0], heat: f[1],water: f[2], protein: f[3], fat: f[4], carbohydrate: f[5], fiber: f[6], sugar: f[7], na: f[8], k: f[9], ca: f[10], mg: f[11], fe: f[12], zn: f[13], p: f[14], va: f[15], ve: f[16], vb:f[17], vc:f[18])
 end
+
+
+

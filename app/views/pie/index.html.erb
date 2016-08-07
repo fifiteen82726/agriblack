@@ -3,13 +3,14 @@
 
 
 
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-	  
-    	$.get("https://agriblack.herokuapp.com/api/nutrition/haha?name=西瓜", function(data, status){
-        	console.log("Data: " + data + "\nStatus: " + status);
-    		});
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<script type="text/javascript">
+  $.get("https://agriblack.herokuapp.com/api/nutrition/haha?name=西瓜", function(data, status){
+   console.log("Data: " + data + "\nStatus: " + status);
+ });
 
       // Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
@@ -32,12 +33,12 @@
           ['Olives', 1],
           ['Zucchini', 1],
           ['Pepperoni', 2]
-        ]);
+          ]);
 
         // Set chart options
         var options = {'title':'西瓜',
-                       'width':600,
-                       'height':400};
+        'width':600,
+        'height':400};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -46,8 +47,8 @@
     </script>
   </head>
 
-  <body>
-    <!--Div that will hold the pie chart-->
+  <body data-controller="<%= controller.pie %>" data-action="<%= controller.action_name %>">
+    
     <div id="chart_div"></div>
   </body>
-</html>
+  </html>

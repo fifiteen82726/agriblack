@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+
+<%= image_tag(@post.photo.url(:large)) %>
 <p>
   <strong>Content:</strong>
   <%= @post.content %>
