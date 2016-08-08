@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :check_login, only: [:index, :show, :update, :destroy]
 
+  
+
   def check_login  
     if !current_user  
      redirect_to new_user_session_path  
@@ -32,9 +34,14 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
-    respond_to do |format|
+    # ap params[:userfruits]
+    fruitlist = params[:userfruits].join(",")
+    @post.fruitlist = fruitlist
+    @post.save
+     # binding.pry
+    respond_to do |format| 
       if @post.save
+        
         current_user.posts << @post
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
@@ -43,7 +50,7 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
-  end
+  end 
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json

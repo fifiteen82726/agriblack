@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
+  revision: 1b0a7189da82daab9ccd96f5f106c4d0ca869d6b
+  specs:
+    bootstrap-datepicker-rails (1.6.1.1)
+      railties (>= 3.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -37,6 +44,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    awesome_print (1.7.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -50,6 +58,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (4.1.1)
@@ -109,6 +118,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -131,6 +141,12 @@ GEM
       mimemagic (~> 0.3.0)
     pg (0.18.4)
     pkg-config (1.1.7)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     rack (1.6.4)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -181,6 +197,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    slop (3.6.0)
     spring (1.7.2)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
@@ -217,6 +234,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
+  bootstrap-datepicker-rails!
   byebug
   coffee-rails (~> 4.1.0)
   devise
@@ -229,6 +248,7 @@ DEPENDENCIES
   jquery-rails
   paperclip (~> 5.0.0)
   pg
+  pry-rails
   rack-cors
   rails (= 4.2.5)
   rails_12factor

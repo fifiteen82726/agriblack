@@ -22,10 +22,21 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
+
+  <div class="field">
+    
+    <%= f.date_field(:user, :born_on) %>
+
+  </div>
+
   <div id="project-label">Enter Fruit Tag:</div>
   <input id="project">
   <div id = "fruit_tag"> </div>
 
+
+  <div id = "fruit_input"></div>
+
+  
   <div class="actions">
     <%= f.submit %>
   </div>
@@ -63,6 +74,13 @@
       select: function( event, ui ) {
         $( "#project" ).val( ui.item.label );
         $("#fruit_tag").append("<div>#"+ ui.item.label +"</div>");
+        $("#fruit_input").append(
+          $('<input>', {
+          type: 'hidden',
+          name: 'userfruits[]',
+          val: ui.item.label
+          })
+        );
         $("#project").val("");
         return false;
       }
