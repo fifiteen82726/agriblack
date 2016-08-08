@@ -35,10 +35,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     # ap params[:userfruits]
-    fruitlist = params[:userfruits].join(",")
-    @post.fruitlist = fruitlist
-    @post.save
-     # binding.pry
+    if params[:userfruits].present?
+      fruitlist = params[:userfruits].join(",")
+      @post.fruitlist = fruitlist
+      @post.save
+    end
+    binding.pry
     respond_to do |format| 
       if @post.save
         
@@ -84,6 +86,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content,:photo)
+      params.require(:post).permit(:content,:photo,:eat_time)
     end
 end
