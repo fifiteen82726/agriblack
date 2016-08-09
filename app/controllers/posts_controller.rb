@@ -33,20 +33,34 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    
     @post = Post.new(post_params)
-    # ap params[:userfruits]
+    month = @post.eat_time.day
+    day = @post.eat_time.month
+    year = @post.eat_time.year
+    # binding.pry
+    date_arr = []
+    date_arr << year << month << day 
+    @post.eat_time = DateTime.parse(date_arr.join('-'))
+    @post.save
+
+
+    # binding.pry
+    ap @post
+    
     if params[:userfruits].present?
       fruitlist = params[:userfruits].join(",")
       @post.fruitlist = fruitlist
       @post.save
     end
-    binding.pry
+    
     respond_to do |format| 
       if @post.save
         
         current_user.posts << @post
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
+        # binding.pry
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
