@@ -24,3 +24,65 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+          <div id="login" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="login well well-sm">
+        <div class="center">
+          <img src="http://placehold.it/250x100&text=Logo" alt="logo"> 
+        </div>
+        <form action="/users/login" style="" class="login-form" id="UserLoginForm" method="post" accept-charset="utf-8">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="data[User][username]" required="required" class="form-control" placeholder="Username" maxlength="255" type="text" id="UserUsername"> 
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input name="data[User][password]" required="required" class="form-control" placeholder="Password" type="password" id="UserPassword"> 
+            </div>
+          </div>
+          <div class="checkbox">
+            <label id="remember-me">
+              <input type="checkbox" name="data[User][remember_me]" value="1" id="UserRememberMe"> Remember Me?
+            </label>
+          </div>         
+          <div class="form-group">
+            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign in"> 
+          </div>
+        </form>
+      </div><!--/.login-->
+    </div><!--/.span12-->
+  </div><!--/.row-fluid-->
+</div><!--/.container-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
+
+
