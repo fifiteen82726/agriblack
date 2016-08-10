@@ -46,9 +46,9 @@
 
                     <!-- Body -->
                     <div class="modal-body">
-                        <form role="form">
+                        <!-- <form role="form">
                             <div class="form-group">
-                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                  <span class="add-on"><i class="icon-user"></i></span>
                                 <input type="email" class="form-control" placeholder="Email" />
                             </div>
                             <div class="form-group">
@@ -57,7 +57,7 @@
                                  </span>
                                 <input type="password" class="form-control" placeholder="Password" />
                             </div>
-                        </form>
+                        </form> -->
                         
 
                         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -65,20 +65,22 @@
                         <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
                         
                         <!-- <input type="email" class="form-control" placeholder="Email" /> -->
+                        <!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
             
                         <%= f.email_field(:email, autofocus: true, class: "form-control",placeholder: "Email") %>
                         </div>
 
                         <div class="form-group">
-                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                  <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                  -->
                         
                                 <%= f.password_field(:password, autocomplete: "off" ,class: "form-control", placeholder: "Password")%>
                         </div>
 
-                        <div class="field">
+                        <!-- <div class="field">
                           <%= f.label :password %><br />
                           <%= f.password_field :password, autocomplete: "off" %>
-                        </div>
+                        </div> -->
 
                         <% if devise_mapping.rememberable? -%>
                           <div class="field">
@@ -88,22 +90,10 @@
                         <% end -%>
 
                         <div class="actions">
-                          <%= f.submit "Log in" %>
+                          <%= f.submit("Log in", class: "btn btn-primary btn-block")%>
                         </div>
                       <% end %>
-      
-
-
-
-
-
                     </div>
-
-                    <!-- Button -->
-                    <div class="modal-footer">
-                        <button class="btn btn-primary btn-block">Log In</button>
-                    </div>
-
                 </div>
             </div>
         </div>
