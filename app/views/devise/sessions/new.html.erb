@@ -25,64 +25,86 @@
 
 <%= render "devise/shared/links" %>
 
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#popUpWindow">Open Modal</button>
 
-<!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Login</h4>
-        </div>
-        <div class="modal-body">
-          <div id="login" class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="login well well-sm">
-        <div class="center">
-          <img src="http://placehold.it/250x100&text=Logo" alt="logo"> 
-        </div>
-        <form action="/users/login" style="" class="login-form" id="UserLoginForm" method="post" accept-charset="utf-8">
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input name="data[User][username]" required="required" class="form-control" placeholder="Username" maxlength="255" type="text" id="UserUsername"> 
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input name="data[User][password]" required="required" class="form-control" placeholder="Password" type="password" id="UserPassword"> 
-            </div>
-          </div>
-          <div class="checkbox">
-            <label id="remember-me">
-              <input type="checkbox" name="data[User][remember_me]" value="1" id="UserRememberMe"> Remember Me?
-            </label>
-          </div>         
-          <div class="form-group">
-            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign in"> 
-          </div>
-        </form>
-      </div><!--/.login-->
-    </div><!--/.span12-->
-  </div><!--/.row-fluid-->
-</div><!--/.container-->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+
+        <div class="modal fade" id="popUpWindow">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title">Log In</h2>
+                        <!-- <div class="col-md-12"> -->
+                          <%#= image_tag("agriblack"),class: "img-responsive" %>
+                          <%= image_tag("agriblack", class: "img-responsive") %>
+                        <!-- </div> -->
+                        
+                    </div>
+
+
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input type="email" class="form-control" placeholder="Email" />
+                            </div>
+                            <div class="form-group">
+                                 <span class="input-group-addon">
+                                 <i class="glyphicon glyphicon-search"> </i>
+                                 </span>
+                                <input type="password" class="form-control" placeholder="Password" />
+                            </div>
+                        </form>
+                        
+
+                        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                        <div class="form-group">
+                        <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+                        
+                        <!-- <input type="email" class="form-control" placeholder="Email" /> -->
+            
+                        <%= f.email_field(:email, autofocus: true, class: "form-control",placeholder: "Email") %>
+                        </div>
+
+                        <div class="form-group">
+                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        
+                                <%= f.password_field(:password, autocomplete: "off" ,class: "form-control", placeholder: "Password")%>
+                        </div>
+
+                        <div class="field">
+                          <%= f.label :password %><br />
+                          <%= f.password_field :password, autocomplete: "off" %>
+                        </div>
+
+                        <% if devise_mapping.rememberable? -%>
+                          <div class="field">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :remember_me %>
+                          </div>
+                        <% end -%>
+
+                        <div class="actions">
+                          <%= f.submit "Log in" %>
+                        </div>
+                      <% end %>
       
-    </div>
-  </div>
-  
-</div>
 
-</body>
-</html>
 
+
+
+
+                    </div>
+
+                    <!-- Button -->
+                    <div class="modal-footer">
+                        <button class="btn btn-primary btn-block">Log In</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 

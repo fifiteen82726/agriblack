@@ -36,6 +36,10 @@ gem "paperclip", '~> 5.0.0'
 gem 'awesome_print'
 gem 'pry-rails'
 
+gem 'bootstrap-sass', '~> 3.3.6'
+gem "font-awesome-rails"
+
+
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 # Use ActiveModel has_secure_password
