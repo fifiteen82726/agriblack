@@ -19,6 +19,10 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    if @post.fruitlist.present?
+      @fruit_tag = @post.fruitlist.split(',')
+    end
+
   end
 
   # GET /posts/new

@@ -1,22 +1,45 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+	<div class="col-md-12">
+		<center>
+		<div class="ticket">
+			<div class="col-md-12 col-sm-12 col-xs-12" >
+					<div class="col-md-offset-2 col-md-4">
+						<%= image_tag(@post.photo.url(:medium)) %>
+						<%#= image_tag('Diary/ticket.png') %>
+					</div>
 
-<!-- 圖片 -->
-<%= image_tag(@post.photo.url(:large)) %>
-<!-- 內文 -->
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-<!-- 時間 -->
-<p>
-	<strong>
-	<%= if @post.eat_time.present? %>
-		<%= @post.eat_time%>
-	<% end %>
-	</strong>
-</p>
+					<div class="col-md-4">
+						<p>
+							<strong>Content:</strong>
+							<%= @post.content %>
+						</p>
+						<p>
+							<strong>
+								<% if @post.eat_time.present? %>
+								<%= @post.eat_time%>
+								<% end %>
+							</strong>
+						</p>
+						<p>
+							<strong>
+								<% @fruit_tag.each do |fruit| %>
+								<p> <%= "##{fruit} "  %></p>
+								<%end %>
+							</strong>
+						</p>
+					</div>
+				</div>
+			</div>
+		</center>
+	</div>
+	
+</div>
+
 <!-- Tag -->
+
+
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
