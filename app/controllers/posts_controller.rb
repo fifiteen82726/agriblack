@@ -21,8 +21,47 @@ class PostsController < ApplicationController
   def show
     if @post.fruitlist.present?
       @fruit_tag = @post.fruitlist.split(',')
+      @heat = 0.0
+      @water= 0.0
+      @protein= 0.0
+      @fat= 0.0
+      @carbohydrate= 0.0
+      @fiber= 0.0
+      @sugar= 0.0
+      @na = 0.0
+      @k= 0.0
+      @ca= 0.0
+      @mg= 0.0
+      @fe= 0.0
+      @zn= 0.0
+      @p= 0.0
+      @va= 0.0
+      @ve= 0.0
+      @vb= 0.0
+      @vc= 0.0
+      @fruit_tag.each do |fu|
+        f = Fruit.find_by_name(fu)
+        @heat += f.heat
+        @water+= f.water
+        @protein+=  f.protein
+        @fat+= f.fat
+        @carbohydrate+= f.carbohydrate
+        @fiber+=  f.fiber
+        @sugar+=  f.sugar
+        @na +=  f.na
+        @k+=  f.k
+        @ca+=  f.ca 
+        @mg+=  f.mg   
+        @fe+=  f.fe
+        @zn+=  f.zn
+        @p+=   f.p
+        @va+=  f.va
+        @ve+=  f.ve
+        @vb+=  f.vb
+        @vc+=  f.vc
+      end
+      binding.pry
     end
-
   end
 
   # GET /posts/new
@@ -39,14 +78,14 @@ class PostsController < ApplicationController
   def create
     
     @post = Post.new(post_params)
-    month = @post.eat_time.day
-    day = @post.eat_time.month
-    year = @post.eat_time.year
-    # binding.pry
-    date_arr = []
-    date_arr << year << month << day 
-    @post.eat_time = DateTime.parse(date_arr.join('-'))
-    @post.save
+    if post_params[:eat_time].present?
+      
+      date_arr = post_params[:eat_time].split("/")
+      arr =[] 
+      arr << date_arr[2] << date_arr[0] << date_arr[1] 
+      @post.eat_time = DateTime.parse(arr.join('-'))
+      @post.save
+    end
 
 
     # binding.pry
