@@ -14,6 +14,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = current_user.posts
+    # if @post.fruitlist.present?
+    #   @fruit_tag = @post.fruitlist.split(',')
   end
 
   # GET /posts/1
@@ -22,6 +24,7 @@ class PostsController < ApplicationController
      # binding.pry
     if @post.fruitlist.present?
       @fruit_tag = @post.fruitlist.split(',')
+     end
       @heat = 0.0
       @water= 0.0
       @protein= 0.0
@@ -60,7 +63,6 @@ class PostsController < ApplicationController
         @ve+=  f.ve
         @vb+=  f.vb
         @vc+=  f.vc
-      end
     end
   end
 

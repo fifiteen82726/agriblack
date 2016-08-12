@@ -60,68 +60,12 @@
 <script type="text/javascript">
 	
 jQuery(document).ready(function($) {
-	var url="https://agriblack.herokuapp.com/api/nutrition/haha?name=百香果";
 
-var name;
-var heat;
-var water;
-var potein;
-var fat;
-var carbohydrate;
-var fiber;
-var suger;
 
-var na;
-var k;
-var ca;
-var mg;
-var fe;
-var zn;
-var p;
-
-var va;
-var ve;
-var vb;
-var vc;
-
-$.ajax({
-        type: 'GET',
-        url: url,
-        dataType: 'JSON',
-        async: false,
-        success: function (data) {
-
-        	name=data.name;
-            heat = data.heat;
-            water=data.water;
-            potein = data.potein;
-            fat = data.fat;
-            carbohydrate=data.carbohydrate;
-            fiber = data.fiber;
-            suger = data.suger;
-
-            na=data.na;
-            k=data.k;
-            ca=data.ca;
-            mg=data.mg;
-            fe = data.fe;
-            zn=data.zn;
-            p=data.p;
-
-            va=data.va;
-            ve=data.ve;
-            vb=data.vb;
-            vc=data.vc;
-
-        },
-        error: function (request, error) {
-        alert(error);
-    	}
-   });
+if (<%= @post.fruitlist.present? %> !== false )
+{
 var pie = new d3pie("pieChart", {
 	
-
-	// console.log("<%= @post.content.to_s %>");
 	"header": {
 		"title": {
 			"text": "<%= @post.fruitlist %>",
@@ -291,6 +235,7 @@ var pie = new d3pie("pieChart", {
 });
 
 
+}
 });
 
 
