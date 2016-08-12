@@ -1,47 +1,83 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <h3 class="panel-title pull-left">NewPost</h3>
+    </div>
+    <div class="modal-body">
+     <%= form_for(@post, class: "form-horizontal",  html: { multipart: true })  do |f| %>
+     <% if @post.errors.any? %>
+     <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-  <%= form_for(@post,  html: { multipart: true })  do |f| %>
-  <% if @post.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <!-- <form class="form-horizontal"> -->
+    <div class="form-group ">
+      <label class="col-xs-3 control-label">Upload</label>
+      <div class="col-xs-9">
+        <%= f.file_field :photo, :class => "form-control"  %>
+        <!-- <input type="file" accept="image/*" class="form-control" > -->
+      </div>
+    </div>
+    <div class="form-group ">
+      <label class="col-xs-3 control-label">Tags</label>
+      <div class="col-xs-9">
+        <input id="project">
+        <span id = "fruit_tag"> </span>
 
-    <ul>
-      <% @post.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-  
+        <!-- <input type="text" class="form-control" placeholder=""> -->
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-3 control-label">Date</label>
+      <div class="col-xs-9">
+        <!-- <input type="date" data-required="true" required>   -->
+        <%= f.text_field :eat_time, "data-provide" => 'datepicker' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-3 control-label">Context</label>
+      <div class="col-xs-9">
+        <!-- <textarea class="form-control" rows="3" placeholder=""></textarea> -->
+        <%= f.text_area :content , class: "form-control", rows: "3"%>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="panel-footer">
+  <div class="btn-group pull-right">
+    <button class="btn btn-danger">
+      <i class="fa fa-times"></i>
+      Cancel
+    </button>
 
-  <div class="field">
-    <%= f.label :photo %><br>
-    <%= f.file_field :photo %>
-  </div>
 
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-
-  <div class="field">
     
-     <%= f.label :eat_time %>
-     <%= f.text_field :eat_time, "data-provide" => 'datepicker' %>
-
+      
+      <!-- <div class="actions"> -->
+      <%= f.submit "Create", class: "btn btn-success" , style: "background:#0275d8" do %>
+        <i class="fa fa-check"></i>
+      <% end %>
+      <!-- </div> -->
+    
   </div>
+</div>
+</div>
+<% end %>
+</div>
 
-  <div id="project-label">Enter Fruit Tag:</div>
-  <input id="project">
-  <div id = "fruit_tag"> </div>
 
 
-  <div id = "fruit_input"></div>
 
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  <% end %>
+
+
+<!--  -->
+
 
 <script>
   $( function() {
@@ -60,14 +96,15 @@
       },
       select: function( event, ui ) {
         $( "#project" ).val( ui.item.label );
-        $("#fruit_tag").append("<div>#"+ ui.item.label +"</div>");
+        // <span class="label label-success">Success</span>
+        $("#fruit_tag").append("<span style=\"margin: 6px\"class=\"label label-success\">#"+ ui.item.label +"</span>");
         $("#fruit_input").append(
           $('<input>', {
-          type: 'hidden',
-          name: 'userfruits[]',
-          val: ui.item.label
+            type: 'hidden',
+            name: 'userfruits[]',
+            val: ui.item.label
           })
-        );
+          );
         $("#project").val("");
         return false;
       }
