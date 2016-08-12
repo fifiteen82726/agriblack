@@ -4,13 +4,16 @@
 	<div class="col-md-12">
 		<center>
 		<div class="ticket">
-			<div class="col-md-12 col-sm-12 col-xs-12" >
-					<div class="col-md-offset-2 col-md-4">
-						<%= image_tag(@post.photo.url(:medium)) %>
-						<%#= image_tag('Diary/ticket.png') %>
+			<div class="col-md-12" >
+					<div class="col-md-6">
+						<% if @post.photo.file? %>
+							<%= image_tag(@post.photo.url(:medium), class: "img-thumbnail") %>
+						<% else %>
+							<%= image_tag("default.png", class: "img-thumbnail")%> 
+						<% end %>
 					</div>
 
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<p>
 							<strong>Content:</strong>
 							<%= @post.content %>
@@ -18,23 +21,26 @@
 						<p>
 							<strong>
 								<% if @post.eat_time.present? %>
-								<%= @post.eat_time%>
+									<%= @post.eat_time%>
 								<% end %>
 							</strong>
 						</p>
 
-						<ul class="tags green">
-    						<li><a href="#">Design</a></li>
-
-
-						<p>
-							<strong>
-								<% @fruit_tag.each do |fruit| %>
-								<p> <%= "##{fruit} "  %></p>
+							<%if @post.fruitlist.present? %>
+								<% @fruit_tag.each do |tag| %>
+									<!-- <div class="tag-orange">tag</div> -->
+									<span class="label label-success" style="font-size:12px">tag</span>
 								<%end %>
-							</strong>
-						</p>
+							<% end %>
+						
+						
 					</div>
+
+
+					<div id="pieChart"></div>
+
+
+
 				</div>
 			</div>
 		</center>
@@ -49,3 +55,243 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+
+<script type="text/javascript">
+	
+jQuery(document).ready(function($) {
+	var url="https://agriblack.herokuapp.com/api/nutrition/haha?name=百香果";
+
+var name;
+var heat;
+var water;
+var potein;
+var fat;
+var carbohydrate;
+var fiber;
+var suger;
+
+var na;
+var k;
+var ca;
+var mg;
+var fe;
+var zn;
+var p;
+
+var va;
+var ve;
+var vb;
+var vc;
+
+$.ajax({
+        type: 'GET',
+        url: url,
+        dataType: 'JSON',
+        async: false,
+        success: function (data) {
+
+        	name=data.name;
+            heat = data.heat;
+            water=data.water;
+            potein = data.potein;
+            fat = data.fat;
+            carbohydrate=data.carbohydrate;
+            fiber = data.fiber;
+            suger = data.suger;
+
+            na=data.na;
+            k=data.k;
+            ca=data.ca;
+            mg=data.mg;
+            fe = data.fe;
+            zn=data.zn;
+            p=data.p;
+
+            va=data.va;
+            ve=data.ve;
+            vb=data.vb;
+            vc=data.vc;
+
+        },
+        error: function (request, error) {
+        alert(error);
+    	}
+   });
+var pie = new d3pie("pieChart", {
+	
+
+	// console.log("<%= @post.content.to_s %>");
+	"header": {
+		"title": {
+			"text": "<%= @post.fruitlist %>",
+			"fontSize": 34,
+			"font": "courier"
+		},
+		"subtitle": {
+			"text": "每100克含量",
+			"color": "#999999",
+			"fontSize": 10,
+			"font": "courier"
+		},
+		"location": "pie-center",
+		"titleSubtitlePadding": 10
+	},
+	"footer": {
+		//"text": "* This was curious. We're not sure why over several people regard Winnipeg as a Top 15 Fear.",
+		"color": "#999999",
+		"fontSize": 10,
+		"font": "open sans",
+		"location": "bottom-left"
+	},
+	"size": {
+		"canvasWidth": 590,
+		"pieInnerRadius": "95%",
+		"pieOuterRadius": "70%"
+	},
+	"data": {
+		"sortOrder": "random",
+		"smallSegmentGrouping": {
+			"enabled": true,
+			"value": 0
+		},
+		"content": [
+			{
+				"label": "熱量 (kcal)",
+				"value": <%= @heat.to_i %>,
+				"color": "#ccc2b2"
+			},
+			{
+				"label": "水分 (g)",
+				"value": <%= @water.to_i %>,
+				"color": "#ccc8b2"
+			},
+			{
+				"label": "蛋白質 (g)",
+				"value": <%= ('%.2f' % @protein).to_f %>,
+				"color": "#b5b2cc"
+			},
+			{
+				"label": "脂肪 (g)",
+				"value": <%= ('%.2f' % @fat).to_f %>,
+				"color": "#b2bbcc"
+			},
+			{
+				"label": "碳水化合物 (g)",
+				"value": <%= ('%.2f' % @carbohydrate).to_f %>,
+				"color": "#b2b4cc"
+			},
+			{
+				"label": "膳食纖維 (g)",	
+				"value": <%= ('%.2f' % @fiber).to_f %>,
+				"color": "#c7ccb2"
+			},
+			{
+				"label": "糖分 (g)",
+				"value": <%= ('%.2f' % @sugar).to_f %>,
+				"color": "#b2c8cc"
+			},
+			{
+				"label": "鈉 (mg)",
+				"value": <%= ('%.2f' % @na).to_f %>,
+				"color": "#ccb2b2"
+			},
+			{
+				"label": "鉀 (mg)",
+				"value": <%= ('%.2f' % @k).to_f %>,
+				"color": "#b2c2cc"
+			},
+			{
+				"label": "鈣 (mg)",
+				"value": <%= ('%.2f' % @ca).to_f %>,
+				"color": "#b2ccbb"
+			},
+			{
+				"label": "鎂 (mg)",
+				"value": <%= ('%.2f' % @mg).to_f %>,
+				"color": "#c6b2cc"
+			},
+			{
+				"label": "鐵 (mg)",
+				"value": <%= ('%.2f' % @fe).to_f %>,
+				"color": "#ccb2c8"
+			},
+			{
+				"label": "鋅 (mg)",
+				"value": <%= ('%.2f' % @zn).to_f %>,
+				"color": "#b5ccb2"
+			},
+			{
+				"label": "磷 (mg)",
+				"value": <%= ('%.2f' % @p).to_f %>,
+				"color": "#b2ccc6"
+			},
+			{
+				"label": "維生素A (mg)",
+				"value": <%= ('%.2f' % @va).to_f %>,
+				"color": "#bbb2cc"
+			},
+			{
+				"label": "維生素E (mg)",
+				"value": <%= ('%.2f' % @ve).to_f %>,
+				"color": "#b2ccb5"
+			},
+			{
+				"label": "維生素B (mg)",
+				"value": <%= ('%.2f' % @vb).to_f %>,
+				"color": "#bfccb2"
+			},
+			{
+				"label": "維生素C (mg)",
+				"value": <%= ('%.2f' % @vc).to_f %>,
+				"color": "#ccb9b2"
+			}
+		]
+	},
+	"labels": {
+		"outer": {
+			"format": "label-value1",
+			"pieDistance": 19
+		},
+		"inner": {
+			"format": "none"
+		},
+		"mainLabel": {
+			"fontSize": 11
+		},
+		"percentage": {
+			"color": "#999999",
+			"fontSize": 11,
+			"decimalPlaces": 0
+		},
+		"value": {
+			"color": "#cccc43",
+			"fontSize": 11
+		},
+		"lines": {
+			"enabled": true,
+			"color": "#777777"
+		},
+		"truncation": {
+			"enabled": true
+		}
+	},
+	"effects": {
+		"pullOutSegmentOnClick": {
+			"effect": "linear",
+			"speed": 400,
+			"size": 8
+		}
+	},
+	"misc": {
+		"colors": {
+			"segmentStroke": "#000000"
+		}
+	}
+});
+
+
+});
+
+
+</script>

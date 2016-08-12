@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+     # binding.pry
     if @post.fruitlist.present?
       @fruit_tag = @post.fruitlist.split(',')
       @heat = 0.0
@@ -60,7 +61,6 @@ class PostsController < ApplicationController
         @vb+=  f.vb
         @vc+=  f.vc
       end
-      binding.pry
     end
   end
 
@@ -76,19 +76,16 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    
     @post = Post.new(post_params)
+
     if post_params[:eat_time].present?
-      
       date_arr = post_params[:eat_time].split("/")
       arr =[] 
       arr << date_arr[2] << date_arr[0] << date_arr[1] 
       @post.eat_time = DateTime.parse(arr.join('-'))
       @post.save
     end
-
-
-    # binding.pry
+    
     ap @post
     
     if params[:userfruits].present?
@@ -96,6 +93,7 @@ class PostsController < ApplicationController
       @post.fruitlist = fruitlist
       @post.save
     end
+
     
     respond_to do |format| 
       if @post.save
