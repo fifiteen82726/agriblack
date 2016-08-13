@@ -20,14 +20,14 @@
     <div class="form-group ">
       <label class="col-xs-3 control-label">Upload</label>
       <div class="col-xs-9">
-        <%= f.file_field :photo, :class => "form-control"  %>
+        <%= f.file_field :photo, :class => "form-control form_padding"  %>
         <!-- <input type="file" accept="image/*" class="form-control" > -->
       </div>
     </div>
     <div class="form-group ">
       <label class="col-xs-3 control-label">Tags</label>
       <div class="col-xs-9">
-        <input id="project">
+        <input id="project" class = "form-control form_padding">
         <span id = "fruit_tag"> </span>
         <div id = "fruit_input"></div>
         <!-- <input type="text" class="form-control" placeholder=""> -->
@@ -35,35 +35,29 @@
     </div>
     <div class="form-group">
       <label class="col-xs-3 control-label">Date</label>
-      <div class="col-xs-9">
+      <div class="col-xs-9" class = "form-control">
         <!-- <input type="date" data-required="true" required>   -->
-        <%= f.text_field :eat_time, "data-provide" => 'datepicker' %>
+        <%= f.text_field :eat_time, :class => "form-control form_padding", "data-provide" => 'datepicker' %>
       </div>
     </div>
     <div class="form-group">
       <label class="col-xs-3 control-label">Context</label>
-      <div class="col-xs-9">
+      <div class="col-xs-9" >
         <!-- <textarea class="form-control" rows="3" placeholder=""></textarea> -->
-        <%= f.text_area :content , class: "form-control", rows: "3"%>
+        <%= f.text_area :content , class: "form-control form_padding", rows: "3"%>
       </div>
     </div>
-  
-</div>
-<div class="panel-footer">
+  <div class="panel-footer">
   <div class="btn-group pull-right">
-    <button class="btn btn-danger">
-      <i class="fa fa-times"></i>
-      Cancel
-    </button>
-
-      <!-- <div class="actions"> -->
-      <%= f.submit "Create", class: "btn btn-success" , style: "background:#0275d8" do %>
+    
+      <%= link_to "Cancle", posts_path , class: "btn btn-danger form_padding"%>
+      <%= f.submit "Create", class: "btn btn-success form_padding" , style: "background:#0275d8" do %>
         <i class="fa fa-check"></i>
       <% end %>
-      <!-- </div> -->
-    
   </div>
 </div>
+</div>
+
 </div>
 <% end %>
 </div>

@@ -53,7 +53,7 @@
                         <% if post.fruitlist.present?  %>
                           <% fruit_tag = post.fruitlist.split(',') %>
                           <% fruit_tag.each do |f| %>
-                            <span class="label label-primary">f</span>
+                            <span class="label label-primary"><%= f %></span>
                           <% end %>
                         <% end %>
                        <!--  <span class="label label-primary">香蕉</span>
@@ -79,65 +79,7 @@
               </div>
             <% end %>
             <% end %>
-           <!--  <div class="col-md-4 col-sm-6">
-                <div class="panel panel-default">
-                      <div class="panel-heading clearfix">
-                        <h3 class="panel-title pull-left">2016-06-06 18:02:03</h3>
-                          <a class="btn btn-success pull-right" href="#">
-                            <i class="fa fa-pencil"></i>
-                            Edit
-                          </a>
-                        </div>
-                    <div class="list-group">
-                        <img src="http://www.teamstudio.com/Portals/218295/images/istock_000001242290small.jpg" class="setimg img-responsive"/>
-                      <div class="list-group-item">
-                        <h4 class="list-group-item-heading">
-                        <span class="label label-primary">蘋果</span>
-                        <span class="label label-primary">香蕉</span>
-                        <span class="label label-primary">芭樂</span>
-                        </h4>
-                      </div>
-                      <div class="list-group-item">
-                        <p class="list-group-item-text">我吃了好多水果哈哈XDD</p>
-                      </div>
-                    </div>
-                    <div class="panel-footer">
-                      <div class="col-md-12 text-center">
-                        <button class="btn btn-info">See more</button>
-                      </div>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- <div class="col-md-4 col-sm-6">
-                <div class="panel panel-default">
-                      <div class="panel-heading clearfix">
-                        <h3 class="panel-title pull-left">2016-06-06 18:02:03</h3>
-                          <a class="btn btn-success pull-right" href="#">
-                            <i class="fa fa-pencil"></i>
-                            Edit
-                          </a>
-                        </div>
-                    <div class="list-group">
-                        <img src="http://www.teamstudio.com/Portals/218295/images/istock_000001242290small.jpg" class="setimg img-responsive"/>
-                      <div class="list-group-item">
-                        <h4 class="list-group-item-heading">
-                        <span class="label label-primary">蘋果</span>
-                        <span class="label label-primary">香蕉</span>
-                        <span class="label label-primary">芭樂</span>
-                        </h4>
-                      </div>
-                      <div class="list-group-item">
-                        <p class="list-group-item-text">我吃了好多水果哈哈XDD</p>
-                      </div>
-                    </div>
-                    <div class="panel-footer">
-                      <div class="col-md-12 text-center">
-                        <button class="btn btn-info">See more</button>
-                      </div>
-                    </div>
-                </div>
-            </div> -->
+           
 
         </div>
     </div>

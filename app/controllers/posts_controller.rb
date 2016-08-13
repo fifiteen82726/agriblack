@@ -24,7 +24,7 @@ class PostsController < ApplicationController
      # binding.pry
     if @post.fruitlist.present?
       @fruit_tag = @post.fruitlist.split(',')
-     end
+    end
       @heat = 0.0
       @water= 0.0
       @protein= 0.0
@@ -63,7 +63,29 @@ class PostsController < ApplicationController
         @ve+=  f.ve
         @vb+=  f.vb
         @vc+=  f.vc
+
+        # {vc: "", vb: , }
     end
+    @big_v_h = {vc: @va, vb: @vb, vc: @vc, ve: @ve}.max_by{|k,v| v}
+    @min_v_h = {vc: @va, vb: @vb, vc: @vc, ve: @ve}.min_by{|k,v| v}
+    # binding.pry
+    @big_m_h = {mg: @mg, ca: @ca, k: @k, fe: @fe, zn: @zn, p: @p  }.max_by{|k,v| v}
+    @min_m_h = {mg: @mg, ca: @ca, k: @k, fe: @fe, zn: @zn, p: @p  }.min_by{|k,v| v}
+    
+
+    @v_need= {
+      va: "小番茄",
+      vb: "榴槤",
+      vc: "芭樂"
+    }
+
+    @m_need ={
+      mg: "榴槤", ca: "桑葚", k: "榴槤", fe: "小番茄", zn: "枇杷", p:  "百香果" 
+    }
+
+    @energy_name= {heat:"熱量", fiber:"膳食纖維", na:"鈉", k:"鉀", ca:"鈣", mg:"鎂", fe:"鐵", zn:"鋅", p:"磷", va:"維生素A", ve:"維生素E", vc: "維生素C", vb: "維生素B"}
+
+
   end
 
   # GET /posts/new
