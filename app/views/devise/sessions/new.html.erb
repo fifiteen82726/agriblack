@@ -2,8 +2,9 @@
   <div class="col-md-offset-3 col-md-6">
     <center>
       <div>
-        <h2>Log in</h2
+        <h2>Log in</h2>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
           <div class="form-group">
             <%= f.email_field(:email, autofocus: true, class: "form-control",placeholder: "Email") %>
           </div>
@@ -28,7 +29,5 @@
   <br>
   <br>
   <br>
-  <br>
-
-
+  <br> 
 
