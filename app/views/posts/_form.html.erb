@@ -29,7 +29,7 @@
       <div class="col-xs-9">
         <input id="project">
         <span id = "fruit_tag"> </span>
-
+        <div id = "fruit_input"></div>
         <!-- <input type="text" class="form-control" placeholder=""> -->
       </div>
     </div>
@@ -47,7 +47,7 @@
         <%= f.text_area :content , class: "form-control", rows: "3"%>
       </div>
     </div>
-  </form>
+  
 </div>
 <div class="panel-footer">
   <div class="btn-group pull-right">
@@ -56,9 +56,6 @@
       Cancel
     </button>
 
-
-    
-      
       <!-- <div class="actions"> -->
       <%= f.submit "Create", class: "btn btn-success" , style: "background:#0275d8" do %>
         <i class="fa fa-check"></i>
