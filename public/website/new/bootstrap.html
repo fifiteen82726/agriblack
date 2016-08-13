@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width， initial-scale=1">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+
+
+        <div class="row center-block" style="padding-top:30px;">
+            <div class="col-lg-3">
+                <a href="#t1" style="text-decoration:none;"><button type="button" class="btn btn-default btn-block btn-lg" style="background: #34495e;border-radius: 30px;    border: 6px ridge #2ecc71;"><h3 style="color:white;">Grid system</h3></button></a>
+            </div>
+            <div class="col-lg-3">
+               <a href="#t2" style="text-decoration: none;color:white;"><button type="button" class="btn btn-default btn-block btn-lg" style="background: #34495e;border-radius: 30px;    border: 6px ridge #2ecc71;"><h3 style="color:white;">Forms</h3></button></a>
+            </div>
+            <div class="col-lg-3">
+               <a href="#t3" style="text-decoration: none;color:white;"><button type="button" class="btn btn-default btn-block btn-lg" style="background: #34495e;border-radius: 30px;    border: 6px ridge #2ecc71;"><h3 style="color:white;">Buttons</h3></button></a>
+            </div>
+            <div class="col-lg-3">
+               <a href="#t4" style="text-decoration: none;color:white;"><button type="button" class="btn btn-default btn-block btn-lg" style="background: #34495e;border-radius: 30px;    border: 6px ridge #2ecc71;"><h3 style="color:white;">Responsive utilities</h3></button></a>
+            </div>
+        </div>
+
+        <div class="jumbotron" id="t1">
+            <h1><a href="#" style="color:black;">Grid system</a></h1>
+        </div><hr>
+        <ul>
+            <li><h3>將網頁寬度切成12等份</h3></li>
+            <li><h3>排版整齊、提升閱讀體驗</h3></li>
+            <li><h3>彈性且方便依照自己的元件做網頁排版</h3></li>
+            <li><h3>簡易實作RWD(Responsive Web Design)</h3></li>
+        </ul>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-1">
+                <a data-toggle="tab" href="#m1" style="color:black;text-decoration: none;">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+                </a>  
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+            <div class="col-lg-1">
+                <button type="button" class="btn btn-default btn-block">Span 1</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-4">
+                 <a data-toggle="tab" href="#m2" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-primary btn-block">Span 4</button>
+                </a>  
+            </div>
+            <div class="col-lg-4">
+                <button type="button" class="btn btn-primary btn-block">Span 4</button>
+            </div>
+            <div class="col-lg-4">
+                <button type="button" class="btn btn-primary btn-block">Span 4</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-3">
+                <a data-toggle="tab" href="#m3" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-success btn-block">Span 3</button>
+                </a>  
+            </div>
+            <div class="col-lg-9">
+                <button type="button" class="btn btn-success btn-block">Span 9</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-5">
+                <a data-toggle="tab" href="#m4" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-info btn-block">Span 5</button>
+                </a>  
+            </div>
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-info btn-block">Span 2</button>
+            </div>
+            <div class="col-lg-5">
+                <button type="button" class="btn btn-info btn-block">Span 5</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-6">
+                <a data-toggle="tab" href="#m5" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-warning btn-block">Span 6</button>
+                </a>  
+            </div>
+            <div class="col-lg-6">
+                <button type="button" class="btn btn-warning btn-block">Span 6</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <a data-toggle="tab" href="#m6" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-danger btn-block">Span 12</button>
+                </a>  
+            </div>
+        </div>
+        <br>
+
+        <div class="tab-content">
+
+        <div id="m1" class="tab-pane fade in active">
+            <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-lg-1&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-block&quot;&gt;Span 1&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-1&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-block&quot;&gt;Span 1&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-1&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-block&quot;&gt;Span 1&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>   
+            <div id="m2" class="tab-pane fade">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-lg-4&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-block&quot;&gt;Span 4&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-4&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-block&quot;&gt;Span 4&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-4&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-block&quot;&gt;Span 4&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre> 
+            </div>
+
+            <div id="m3" class="tab-pane fade">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-lg-3&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-success btn-block&quot;&gt;Span 3&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-9&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-success btn-block&quot;&gt;Span 9&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre> 
+            </div>
+
+            <div id="m4" class="tab-pane fade">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-lg-5&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-info btn-block&quot;&gt;Span 5&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-2&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-info btn-block&quot;&gt;Span 2&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-5&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-info btn-block&quot;&gt;Span 5&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre> 
+            </div>
+
+            <div id="m5" class="tab-pane fade">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-lg-6&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-warning btn-block&quot;&gt;Span 6&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-6&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-warning btn-block&quot;&gt;Span 6&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre> 
+            </div>
+
+            <div id="m6" class="tab-pane fade">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-lg-12&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-danger btn-block&quot;&gt;Span 12&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre> 
+            </div>           
+
+        </div>
+
+        <div class="jumbotron" id="t2">
+            <h1><a href="#" style="color:black;">Forms</a></h1>
+        </div>
+        <hr>
+        <ul>
+            <li><h3>3種表單排版的方式</h3></li>
+            <li><h3>Input在表單中較容易設計</h3></li>
+        </ul>
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-4">
+                 <a data-toggle="tab" href="#f1" style="color:black;text-decoration: none;">
+                <button type="button" class="btn btn-default btn-block">Vertical form</button>
+                </a>  
+            </div>
+            <div class="col-lg-4">
+                <a data-toggle="tab" href="#f2" style="color:black;text-decoration: none;">
+                <button type="button" class="btn btn-default btn-block">Horizontal form</button>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <a data-toggle="tab" href="#f3" style="color:black;text-decoration: none;">
+                <button type="button" class="btn btn-default btn-block">Inline form</button>
+                </a>
+            </div>
+        </div>　<hr> 
+     
+
+        <div class="tab-content">   
+            <div id="f1" class="tab-pane fade in active">
+            <h3><div class="panel panel-primary"><div class="panel-heading">Vertical form</div></div></h3>
+
+        <form role="form">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>  
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;form role=&quot;form&quot;&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;email&quot;&gt;Email address:&lt;/label&gt;
+    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;email&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;pwd&quot;&gt;Password:&lt;/label&gt;
+    &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;pwd&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox&quot;&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt; Remember me&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre> 
+
+
+</div> 
+
+            <div id="f2" class="tab-pane fade">
+            <h3><div class="panel panel-primary"><div class="panel-heading">Horizontal form</div></div></h3>
+
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Email:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Password:</label>
+    <div class="col-sm-10"> 
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+  </div>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label><input type="checkbox"> Remember me</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;form class=&quot;form-horizontal&quot; role=&quot;form&quot;&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;control-label col-sm-2&quot; for=&quot;email&quot;&gt;Email:&lt;/label&gt;
+    &lt;div class=&quot;col-sm-10&quot;&gt;
+      &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;email&quot; placeholder=&quot;Enter email&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label class=&quot;control-label col-sm-2&quot; for=&quot;pwd&quot;&gt;Password:&lt;/label&gt;
+    &lt;div class=&quot;col-sm-10&quot;&gt; 
+      &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;pwd&quot; placeholder=&quot;Enter password&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group&quot;&gt; 
+    &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;
+      &lt;div class=&quot;checkbox&quot;&gt;
+        &lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt; Remember me&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group&quot;&gt; 
+    &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;
+      &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre> 
+
+
+</div> 
+
+            <div id="f3" class="tab-pane fade">
+            <h3><div class="panel panel-primary"><div class="panel-heading">Inline form</div></div></h3>
+
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;form class=&quot;form-inline&quot; role=&quot;form&quot;&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;email&quot;&gt;Email address:&lt;/label&gt;
+    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;email&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;pwd&quot;&gt;Password:&lt;/label&gt;
+    &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;pwd&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox&quot;&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt; Remember me&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre> 
+
+
+</div> 
+            </div>
+
+        <div class="jumbotron" id="t3">
+            <h1><a href="#" style="color:black;">Buttons</a></h1>
+        </div><hr>
+        <ul>
+            <li><h3>4種大小、6種顏色</h3></li>
+            <li><h3>輕易選擇按鈕的大小及顏色</h3></li>
+            <li><h3>比起自製按鈕，有效節省時間</h3></li>
+        </ul>
+        <hr>
+
+
+        <div class="row">
+            <div class="col-lg-2">
+                <a data-toggle="tab" href="#home" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-default btn-block active">Default</button>
+                </a>   
+            </div>
+            <div class="col-lg-2">
+                <a data-toggle="tab" href="#menu1" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-primary btn-block">Primary</button>
+                </a>   
+            </div>
+            <div class="col-lg-2">
+                <a data-toggle="tab" href="#menu2" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-success btn-block btn-xs">Success-xSmall</button>
+                </a>   
+            </div>
+            <div class="col-lg-2">
+                <a data-toggle="tab" href="#menu3" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-info btn-block btn-sm">Info-Small</button>
+                </a>   
+            </div>
+            <div class="col-lg-2">
+                <a data-toggle="tab" href="#menu4" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-warning btn-block">Warning</button>
+                </a>   
+            </div>
+            <div class="col-lg-2">            
+                <a data-toggle="tab" href="#menu5" style="color:white;text-decoration: none;">
+                <button type="button" class="btn btn-danger btn-block btn-lg">Danger-langer</button>
+                </a>   
+            </div>
+        </div>
+        <br>
+
+        <div class="tab-content">   
+            <div id="home" class="tab-pane fade in active">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-block active&quot;&gt;Default&lt;/button&gt;</code></pre>  
+            </div>
+            <div id="menu5" class="tab-pane fade">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;button type=&quot;button&quot; class=&quot;btn btn-success btn-block btn-xs&quot;&gt;Success&lt;/button&gt;</code></pre> 
+            </div>
+            <div id="menu3" class="tab-pane fade">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;button type=&quot;button&quot; class=&quot;btn btn-info btn-block btn-sm&quot;&gt;Info&lt;/button&gt;</code></pre> 
+            </div>
+            <div id="menu4" class="tab-pane fade">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;button type=&quot;button&quot; class=&quot;btn btn-warning btn-block&quot;&gt;Warning&lt;/button&gt;</code></pre> 
+            </div>
+            <div id="menu5" class="tab-pane fade">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;button type=&quot;button&quot; class=&quot;btn btn-danger btn-block btn-lg&quot;&gt;Danger&lt;/button&gt;</code></pre> 
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-block&quot;&gt;Primary&lt;/button&gt;</code></pre> 
+            </div>
+
+
+
+    <div class="jumbotron" id="t4">
+         <h1><a href="#" style="color:black;">Responsive utilities</a></h1>
+        </div><hr>
+         <ul>
+            <li><h3>快速建立mobile-friendly的網頁</h3></li>
+            <li><h3>方便設計在任何裝置中想要顯示的重點</h3></li>
+            <li><h3>元件可依照視窗大小，決定"顯示"或"隱藏"</h3></li>
+        </ul>
+       <hr>
+    </div>
+
+
+            <h3><div class="panel panel-primary"><div class="panel-heading">Available classes</div></div></h3>
+            <div class="col-lg-12">
+                <img src="img/b1.jpg" class="img-responsive img-rounded center-block" alt="Responsive image">
+            </div>
+
+<div class="row text-center visible-on">
+
+  <div class="col-lg-6">          
+     <h3><span class="hidden-xs">Extra x-small</span></h3>
+     <h3><span class="visible-xs" style="color:red;">✔ Visible on x-small</span></h3>
+  </div>  
+
+  <div class="col-lg-6">          
+     <h3><span class="hidden-sm">Extra small</span></h3>
+     <h3><span class="visible-sm" style="color:red;">✔ Visible on Small</span></h3>
+  </div>  
+
+  <div class="col-lg-6">          
+     <h3><span class="hidden-md">Extra medium</span></h3>
+     <h3><span class="visible-md" style="color:red;">✔ Visible on Medium</span></h3>
+  </div>  
+
+  <div class="col-lg-6">          
+     <h3><span class="hidden-lg">Extra large</span></h3>
+     <h3><span class="visible-lg" style="color:red;">✔ Visible on Large</span></h3>
+  </div>  
+                                      
+</div>
+
+
+    
+<pre><code class='language-markup line-numbers' style="font-size:20px;">&lt;div class=&quot;row text-center visible-on&quot;&gt;
+
+  &lt;div class=&quot;col-lg-6&quot;&gt;          
+     &lt;h3&gt;&lt;span class=&quot;hidden-xs&quot;&gt;Extra x-small&lt;/span&gt;&lt;/h3&gt;
+     &lt;h3&gt;&lt;span class=&quot;visible-xs&quot; style=&quot;color:red;&quot;&gt;✔ Visible on x-small&lt;/span&gt;&lt;/h3&gt;
+  &lt;/div&gt;  
+
+  &lt;div class=&quot;col-lg-6&quot;&gt;          
+     &lt;h3&gt;&lt;span class=&quot;hidden-sm&quot;&gt;Extra small&lt;/span&gt;&lt;/h3&gt;
+     &lt;h3&gt;&lt;span class=&quot;visible-sm&quot; style=&quot;color:red;&quot;&gt;✔ Visible on Small&lt;/span&gt;&lt;/h3&gt;
+  &lt;/div&gt;  
+
+  &lt;div class=&quot;col-lg-6&quot;&gt;          
+     &lt;h3&gt;&lt;span class=&quot;hidden-md&quot;&gt;Extra medium&lt;/span&gt;&lt;/h3&gt;
+     &lt;h3&gt;&lt;span class=&quot;visible-md&quot; style=&quot;color:red;&quot;&gt;✔ Visible on Medium&lt;/span&gt;&lt;/h3&gt;
+  &lt;/div&gt;  
+
+  &lt;div class=&quot;col-lg-6&quot;&gt;          
+     &lt;h3&gt;&lt;span class=&quot;hidden-lg&quot;&gt;Extra large&lt;/span&gt;&lt;/h3&gt;
+     &lt;h3&gt;&lt;span class=&quot;visible-lg&quot; style=&quot;color:red;&quot;&gt;✔ Visible on Large&lt;/span&gt;&lt;/h3&gt;
+  &lt;/div&gt;  
+                                      
+&lt;/div&gt;</code></pre> 
+      
+
+
+
+
+
+   
+                                             
+        </div><!-- container -->
+    
+    <footer class="footer" style="background: #000106;">
+            <h4><p class="text-center" style="color:white;font-style: italic;"><u>
+                Hi! I am Footer .
+            </u></p></h4>
+     </footer>
+
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

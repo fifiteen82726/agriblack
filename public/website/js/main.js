@@ -56,3 +56,15 @@ $(function() {
         reader.readAsDataURL(file);
     });  
 });
+
+$('#show').click(function(e){
+    $('#users').show();
+    $('#users1').hide();
+    $('#setfooter').hide();
+})
+
+$('#show1').click(function(e){
+    $('#users1').show();
+    $('#users').hide();
+    $('#setfooter').hide();
+})

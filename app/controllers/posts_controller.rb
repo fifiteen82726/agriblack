@@ -100,8 +100,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
 
+    @post = Post.new(post_params)
     if post_params[:eat_time].present?
       date_arr = post_params[:eat_time].split("/")
       arr =[] 

@@ -20,10 +20,10 @@ User.destroy_all
 Post.destroy_all
 
 
-# p1 = Post.create(content: Faker::Lorem.paragraph)
-# p2 = Post.create(content: Faker::Lorem.paragraph)
+p1 = Post.create(content: Faker::Lorem.paragraph)
+p2 = Post.create(content: Faker::Lorem.paragraph)
 
-User.create(email: "fifiteen82726@gmail.com", password: "12345678", posts:[p1,p2])
+User.create(email: "fifiteen82726@gmail.com", password: "12345678")
 
 arr = [
   ["木瓜",36,89.1,0.6,0.1,9.9,1.4,6.2,3,186,23,15,0.3,0.2,11,0.202,0.3,0.15,58.3,0,0],
