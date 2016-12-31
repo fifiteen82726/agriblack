@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  get 'home/search'
+
+  get 'home/geebook'
+
   devise_for :users
   get 'pie' => 'pie#index'
 

@@ -39,6 +39,7 @@ gem 'pry-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
 gem 'gravtastic'
+gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'
 
 
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
@@ -64,6 +65,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
-ruby "2.3.1"
-
