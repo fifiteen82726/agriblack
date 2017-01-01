@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
-  get 'home/search'
-
-  get 'home/geebook'
-
+  root 'home#index'
   devise_for :users
   get 'pie' => 'pie#index'
 
   resources :posts
-  root 'posts#index'
+  # root 'posts#index'
   mount FruitAPI::API => '/'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
