@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :users
   get 'pie' => 'pie#index'
-
   resources :posts
   # root 'posts#index'
   mount FruitAPI::API => '/'

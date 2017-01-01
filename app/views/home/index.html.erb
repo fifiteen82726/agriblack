@@ -1,2 +1,91 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<body id="page-top" class="index" style="background: #63E5D5">
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <%= image_tag('img/logologo.png', :class => 'img-responsive', :alt => '', :width => '256', :height => '256') %>
+          <div class="intro-text">
+            <span class="name">Golly Gee 果力力</span>
+            <span class="sub-name">你的營養小秘書，給你一天的活力！</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Portfolio Grid Section -->
+  <div>
+    <div class="row">
+      <div class="col-lg-2">
+        <%= image_tag('img/Illustrations/1-3.png', :class => 'img-responsive', :alt => '', :height => '285') %>
+      </div>
+      <div class="col-lg-8 text-center" style="padding-top: 6%;">
+        <h3>Diary</h3>
+        <h5>紀錄你的每日水果攝取，幫你計算營養均衡，還可以解鎖Geebook稀有水果怪物唷！</h5>
+      </div>
+      <div class="col-lg-2">
+        <a href="http://localhost:3000/">
+          <%= image_tag('img/Illustrations/1.png', :class => 'img-responsive', :id => 'set1') %>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- About Section -->
+  <div>
+    <div class="row" style="background: #FFEF2C;">
+      <div class="col-lg-2">
+        <a href="Illustrations.html">
+          <%= image_tag('img/Illustrations/2.png', :class => 'img-responsive', :id => 'set2') %>
+        </a>
+      </div>
+      <div class="col-lg-8 text-center" style="padding-top: 6%;">
+        <h3>Geebook</h3>
+        <h5>幫你分析水果營養成分，每日登入並記錄你的水果攝取<br>獲得經驗值以解鎖稀有水果怪物，水果怪物在圖鑑等你收集！</h5>
+      </div>
+      <div class="col-lg-2">
+        <%= image_tag('img/Illustrations/2-3.png', :class => 'img-responsive', :alt => '') %>
+      </div>
+    </div>
+  </div>
+  <!-- Contact Section -->
+  <div>
+    <div class="row">
+      <div class="col-lg-2">
+        <%= image_tag('img/Illustrations/2-4.png', :class => 'img-responsive', :alt => '') %>
+      </div>
+      <div class="col-lg-8 text-center" style="padding-top: 6%;">
+        <h3>Search</h3>
+        <h5>消化不良？火氣大？還是小感冒？搜尋你的症狀，惱人的小毛病用水果來對抗<br>
+          探訪長輩、節慶致意，找不到合適的禮物？Golly Gee告訴你哪些水果最適合！</h5>
+      </div>
+      <div class="col-lg-2">
+        <a href="search.html">
+          <%= image_tag('img/Illustrations/3.png', :class => 'img-responsive', :id => 'set3') %>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#set1").mouseenter(function () {
+        $("#set1").attr("src", "<%= image_path("img/Illustrations/1-2.png")%>");
+      });
+      $("#set1").mouseleave(function () {
+        $("#set1").attr("src", "<%= image_path("img/Illustrations/1.png")%>");
+      });
+      $("#set2").mousemove(function () {
+        $("#set2").attr("src", "<%= image_path("img/Illustrations/2-2.png")%>");
+      });
+      $("#set2").mouseleave(function () {
+        $("#set2").attr("src", "<%= image_path("img/Illustrations/2.png")%>");
+      });
+      $("#set3").mousemove(function () {
+        $("#set3").attr("src", "<%= image_path("img/Illustrations/3-3.png")%>");
+      });
+      $("#set3").mouseleave(function () {
+        $("#set3").attr("src", "<%= image_path("img/Illustrations/3.png")%>");
+      });
+    });
+  </script>
+</body>
