@@ -42,6 +42,7 @@ gem 'gravtastic'
 gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 gem 'rubocop'
+gem 'gravtastic'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
