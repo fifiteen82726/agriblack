@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get 'geebook' => 'home#geebook'
   devise_for :users
   get 'pie' => 'pie#index'
   resources :posts

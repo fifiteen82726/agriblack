@@ -5,6 +5,6 @@ class HomeController < ApplicationController
   def search
   end
 
-  def geebook
+  def geekbook
   end
 end
