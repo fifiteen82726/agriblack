@@ -8,3 +8,4 @@
 //= require js/contact_me
 //= require js/freelancer.min
 //= require jquery-ui
+//= require d3pie.min
