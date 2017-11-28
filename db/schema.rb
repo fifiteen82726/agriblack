@@ -13,68 +13,65 @@
 
 ActiveRecord::Schema.define(version: 20160812200219) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "fruits", force: :cascade do |t|
-    t.string   "name"
-    t.float    "heat"
-    t.float    "water"
-    t.float    "protein"
-    t.float    "fat"
-    t.float    "carbohydrate"
-    t.float    "fiber"
-    t.float    "sugar"
-    t.float    "na"
-    t.float    "k"
-    t.float    "ca"
-    t.float    "mg"
-    t.float    "fe"
-    t.float    "zn"
-    t.float    "p"
-    t.float    "va"
-    t.float    "ve"
-    t.float    "vb"
-    t.float    "vc"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "advantage"
+    t.string   "name",         limit: 255
+    t.float    "heat",         limit: 24
+    t.float    "water",        limit: 24
+    t.float    "protein",      limit: 24
+    t.float    "fat",          limit: 24
+    t.float    "carbohydrate", limit: 24
+    t.float    "fiber",        limit: 24
+    t.float    "sugar",        limit: 24
+    t.float    "na",           limit: 24
+    t.float    "k",            limit: 24
+    t.float    "ca",           limit: 24
+    t.float    "mg",           limit: 24
+    t.float    "fe",           limit: 24
+    t.float    "zn",           limit: 24
+    t.float    "p",            limit: 24
+    t.float    "va",           limit: 24
+    t.float    "ve",           limit: 24
+    t.float    "vb",           limit: 24
+    t.float    "vc",           limit: 24
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "advantage",    limit: 255
   end
 
   create_table "posts", force: :cascade do |t|
-    t.text     "content"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.integer  "user_id"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
+    t.text     "content",            limit: 65535
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "user_id",            limit: 4
+    t.string   "photo_file_name",    limit: 255
+    t.string   "photo_content_type", limit: 255
+    t.integer  "photo_file_size",    limit: 4
     t.datetime "photo_updated_at"
-    t.string   "fruitlist"
+    t.string   "fruitlist",          limit: 255
     t.datetime "eat_time"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "userfruits", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
