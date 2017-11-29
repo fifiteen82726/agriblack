@@ -1,5 +1,4 @@
-# README
-## Agriblack
+# Agriblack
 Agriblack is prototype web app which combine gaming component and information statistic allows people record thier fruit digest.
 
 Embark on the agriblack of self improvement towards better qualities of life and health. Record your daily fruit digest, relive memories & reflect on them. Start journaling today and see how your digest experiences will grow!
